@@ -1,4 +1,4 @@
-在WSL中输入ip addr show eth0命令，该命令会返回WSL的IP地址，将该IP地址作为bind-address的值，这样MySQL就会监听来自该IP地址的连接请求。
+在WSL中输入ip addr show eth0命令，该命令会返回WSL的IP地址(inet 172.18.150.24，地址在inet后)，将该IP地址作为bind-address的值，这样MySQL就会监听来自该IP地址的连接请求。
 cd /etc/mysql/mysql.conf.d/; vim mysqld.cnf; 修改bind-address
 
 mysql> SELECT user, host FROM mysql.user;  
