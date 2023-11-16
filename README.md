@@ -1,17 +1,17 @@
-cd /etc/mysql/mysql.conf.d/; vim mysqld.cnf; 修改bind-address = 0.0.0.0
+在WSL中输入ip addr show eth0命令，该命令会返回WSL的IP地址，将该IP地址作为bind-address的值，这样MySQL就会监听来自该IP地址的连接请求。
+cd /etc/mysql/mysql.conf.d/; vim mysqld.cnf; 修改bind-address
 
 mysql> SELECT user, host FROM mysql.user;  
 +------------------+----------------------------+  
 | user             | host                       |  
 +------------------+----------------------------+  
-| root             | %                          |  
 | root             | desktop-2acffhf.mshome.net |  
 | debian-sys-maint | localhost                  |  
 | mysql.infoschema | localhost                  |  
 | mysql.session    | localhost                  |  
 | mysql.sys        | localhost                  |  
 +------------------+----------------------------+  
-- 注释：mysql.user表是MySQL数据库中存储用户信息和权限的表，其中user列表示用户名，host列表示允许登录的主机名或IP地址
+- 注释：mysql.user表是MySQL数据库中存储用户信息和权限的表，其中user列表示用户名，host列表示允许登录的主机名或IP地址，.mshome.net是这个域名是一个默认的标识符，用于在本地网络中识别和连接计算机，desktop-2acffhf是主机名在WSL中输入hostname即可显示出来
 
 CREATE USER 'root'@'desktop-2acffhf.mshome.net' IDENTIFIED BY 'your_password';
 
