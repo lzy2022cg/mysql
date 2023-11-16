@@ -1,3 +1,5 @@
+cd /etc/mysql/mysql.conf.d/; vim mysqld.cnf; 修改bind-address = 0.0.0.0
+
 mysql> SELECT user, host FROM mysql.user;  
 +------------------+----------------------------+  
 | user             | host                       |  
