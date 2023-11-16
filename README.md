@@ -13,6 +13,8 @@ mysql> SELECT user, host FROM mysql.user;
 +------------------+----------------------------+  
 - 注释：mysql.user表是MySQL数据库中存储用户信息和权限的表，其中user列表示用户名，host列表示允许登录的主机名或IP地址
 
+CREATE USER 'root'@'desktop-2acffhf.mshome.net' IDENTIFIED BY 'your_password';
+
 show grants for 'root'@'desktop-2acffhf.mshome.net';
 - 注释：用于查看root用户在desktop-2acffhf.mshome.net主机上的权限。只有当您以root用户和正确的密码登录到desktop-2acffhf.mshome.net主机上时，才能执行这个语句。
   
