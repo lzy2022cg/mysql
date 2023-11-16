@@ -1,4 +1,4 @@
-mysql> SELECT user, host FROM mysql.user;
+mysql> SELECT user, host FROM mysql.user;  
 +------------------+----------------------------+  
 | user             | host                       |  
 +------------------+----------------------------+  
